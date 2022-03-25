@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa para dimensionar</title>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <h1>Calcular dimensionamiento BD</h1>
+    <form class="dimensionar">
+        <div class="campos-form">
+            <!-- Tipo de campo -->
+            <label for="input-tipo">Tipo de campo</label>
+            <select id="input-tipo" onchange="">
+                <option aria-valuemin="4" aria-valuemax="4" aria-valuenow="4" value="int">int</option>
+                <option aria-valuemin="1" aria-valuemax="1" aria-valuenow="1" value="bool">bool</option>
+                <option aria-valuemin="8" aria-valuemax="8" aria-valuenow="8" value="big-int">big-int</option>
+                <option aria-valuemin="8" aria-valuemax="8" aria-valuenow="8" value="double">double</option>
+                <option aria-valuemin="3" aria-valuemax="3" aria-valuenow="3" value="date">date</option>
+                <option aria-valuemin="8" aria-valuemax="8" aria-valuenow="8" value="datetime">datetime</option>
+                <option aria-valuemin="1" aria-valuemax="128" aria-valuenow="8" value="CHAR(n)">CHAR(n)</option>
+                <option aria-valuemin="1" aria-valuemax="128" aria-valuenow="8" value="VARCHAR(n)">VARCHAR(n)</option>
+            </select>
+            <!-- Tamaño del campo -->
+            <label for="input-tamanio">Tamaño de campo</label>
+            <input type="number" id="input-tamanio" value="4" min="4" max="4">
+            <!-- Tamaño de la cabecera -->
+            <label for="input-cabecera">Tamaño cabecera</label>
+            <input type="number" id="input-cabecera" min="1" max="128" value="1" style="width: 6ch;">
+            <!-- Agregar campo -->
+            <button type="button" class="add-tipo">Agregar campo</button>
+        </div>
+        <!-- Campos registrados -->
+        <div class="lista_campos">
+            <strong>Tipo</strong>
+            <strong>Tamaño</strong>
+            <strong>Cabecera</strong>
+        </div>
+        <div class="cabecera">
+            <!-- Tamaño de la cabecera -->
+            <label for="input-cabecera-fila">Tamaño cabecera de fila</label>
+            <input type="number" id="input-cabecera-fila" min="1" max="128" value="1" style="width: 6ch;">
+        </div>
+        <div class="bloques">
+            <!-- Cantidad de registros -->
+            <label for="input-registros">Cantidad de registros</label>
+            <input type="number" id="input-registros" style="width: 12ch;">
+            <!-- Tamaño del bloque -->
+            <label for="input-bloque">Tamaño del bloque (kB)</label>
+            <input type="number" id="input-bloque" style="width: 12ch;">
+            <!-- Tamaño del bloque -->
+            <label for="input-cabecera-bloque">Cabecera del bloque (B)</label>
+            <input type="number" id="input-cabecera-bloque" style="width: 12ch;">
+        </div>
+        <!-- Calcular dimensionamiento -->
+        <div class="calcular">
+            <input type="submit" value="Calcular dimensionamiento">
+        </div>
+        <output></output>
+    </form>
+</body>
+
+</html>
